@@ -389,7 +389,7 @@ async function analyze() {
       saveBox.style.display = 'block';
       document.querySelectorAll('#saveBox input, #saveBox select, #saveBox button').forEach(el => el.disabled = vaultUnavailable);
       document.getElementById('saveStatus').innerHTML = vaultUnavailable
-        ? '<span class="error">Content Radar save only works on the local copy (needs your Mac\'s vault mounted).</span>'
+        ? '<span class="error">Content Radar save only works on the local copy (needs your Mac\\'s vault mounted).</span>'
         : '';
       document.getElementById('exportBox').style.display = 'block';
       document.getElementById('exportStatus').innerHTML = '';
@@ -452,15 +452,15 @@ function exportTitle() {
 function resultAsMarkdown() {
   const today = new Date().toISOString().slice(0, 10);
   const creator = lastResult.creator ? ('"@' + lastResult.creator + '"') : '"unknown"';
-  return '---\n' +
-    'source: instagram\n' +
-    'creator: ' + creator + '\n' +
-    'url: ' + (lastUrl || '') + '\n' +
-    'date-captured: ' + today + '\n' +
-    'content-type: ' + (lastResult.content_type || 'unknown') + '\n' +
-    '---\n\n' +
-    '# ' + exportTitle() + '\n\n' +
-    lastResult.summary + '\n';
+  return '---\\n' +
+    'source: instagram\\n' +
+    'creator: ' + creator + '\\n' +
+    'url: ' + (lastUrl || '') + '\\n' +
+    'date-captured: ' + today + '\\n' +
+    'content-type: ' + (lastResult.content_type || 'unknown') + '\\n' +
+    '---\\n\\n' +
+    '# ' + exportTitle() + '\\n\\n' +
+    lastResult.summary + '\\n';
 }
 
 async function copyResult() {
