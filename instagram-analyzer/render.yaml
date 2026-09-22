@@ -1,0 +1,24 @@
+# Render Blueprint — deploy via https://dashboard.render.com/select-repo?type=blueprint
+# picking this repo. Render reads this file and creates the service below,
+# prompting you to fill in every "sync: false" var in the dashboard (their
+# values are never stored in this repo).
+services:
+  - type: web
+    name: instagram-analyzer
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: INSTAGRAM_USERNAME
+        sync: false
+      - key: INSTAGRAM_PASSWORD
+        sync: false
+      - key: ANALYZER_USERNAME
+        sync: false
+      - key: ANALYZER_PASSWORD
+        sync: false

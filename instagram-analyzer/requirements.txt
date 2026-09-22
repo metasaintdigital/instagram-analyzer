@@ -1,0 +1,6 @@
+fastapi==0.141.1
+uvicorn==0.53.0
+instaloader==4.15.3
+requests==2.34.2
+python-dotenv==1.2.3
+google-genai==2.24.0
